@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* 🎨 Colors */
+  --color-brandBlue: #0057ff;
+  --color-grey-ec: "#ECECEC";
+  --color-lightBlue: #dfeaff;
+  --color-greenSecondary: #00d770;
+  --color-iconBlue: #003eb8;
+  --color-cardBlue: #004de3;
+  --color-grey60: #6a6a6a1a;
+  --color-greyd1: #d1d1d1;
+  --color-yellowf9d: "#F9D000";
+  --color-lightGreen: "#E3FFF2";
+
+  /* 🧩 Fonts */
+  --font-redhat: "Red Hat Display", sans-serif;
+  --font-stemBold: "stemBold", sans-serif;
+  --font-stemRegular: "stem", sans-serif;
+  --font-dmserif: "DM Serif Display", serif;
+
+  /* 🌄 Backgrounds */
+  --background-image-pace-pattern: url("/src/assets/images/pace-pattern.png");
+  --background-image-about-hero: url("/src/assets/images/abouthero.png");
+  --background-image-sermons-hero: url("/src/assets/images/sermonspage.png");
+  --background-image-about-pace-hero: url("/src/assets/images/aboutpacehero.png");
+
+  /* 🎞️ Animations */
+  --animate-loop-scroll: loop-scroll 50s linear infinite;
+}
+
+@font-face {
+  font-family: stemBold;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/em-stem/Stem-Bold.otf");
+}
+
+@font-face {
+  font-family: stem;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/em-stem/Stem-Regular.otf");
+}
+
+body {
+  font-family: "Red Hat Display", "DM Serif Display", sans-serif;
+  overflow-x: hidden;
+  /* border: 1px solid red; */
+}
+
+@layer utilities {
+  .paused {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes loop-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 6px 0 #f9d000;
+  }
+  50% {
+    box-shadow: 0 0 15px 4px #f9d000;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
